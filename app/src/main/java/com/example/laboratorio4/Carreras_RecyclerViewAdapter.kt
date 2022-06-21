@@ -30,12 +30,14 @@ class Carreras_RecyclerViewAdapter (private var items: ArrayList<CarrerasItem>) 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = itemList?.get(position)
         holder.itemView.findViewById<TextView>(R.id.tvCodigoCarrera)?.text = item?.codigo
-        holder.itemView.findViewById<TextView>(R.id.tvNombreCurso)?.text = item?.nombre
-        holder.itemView.findViewById<TextView>(R.id.tvCreditosCurso)?.text = item?.titulo
+        holder.itemView.findViewById<TextView>(R.id.tvNombreCarrera)?.text = item?.nombre
+        holder.itemView.findViewById<TextView>(R.id.tvTituloCarrera)?.text = item?.titulo
 
-        holder.itemView.findViewById<Button>(R.id.btnCursosGrupos).setOnClickListener {
-           val i = Intent(holder.itemView.context,CursoActivity::class.java)
-            startActivity(holder.itemView.context,i,null)
+        holder.itemView.findViewById<Button>(R.id.btnCursos).setOnClickListener {
+           val i = Intent(holder.itemView.context,CursoActivity::class.java).also {
+               it.putExtra("EXTRA_CARRERA",item?.codigo)
+           }
+            holder.itemView.context.startActivity(i)
         }
     }
 

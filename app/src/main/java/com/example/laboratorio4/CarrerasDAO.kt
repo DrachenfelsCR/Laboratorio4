@@ -26,8 +26,9 @@ class CarrerasDAO {
         return this?.carreras!!
     }
 
-    fun setCarreras(arr : ArrayList<CarrerasItem>){
+    fun setCarreras(arr : ArrayList<CarrerasItem>) : String{
         this.carreras = arr
+        return "cargado"
     }
 
 }

@@ -5,6 +5,7 @@ import android.graphics.Canvas
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -51,15 +52,13 @@ class CarreraActivity : AppCompatActivity() {
         setContentView(R.layout.activity_carrera)
         lista = findViewById(R.id.listRecyclerViewCarreras)
         getListOfCarreras()
-       /* val btnCarreraCursos = findViewById<Button>(R.id.btnCarreraCursos)
 
-        btnCarreraCursos.setOnClickListener {
-            Intent(this@CarreraActivity,CursoActivity::class.java).also {
-                it.putExtra("EXTRA_CURSO",carrera)
-                it.putExtra("EXTRA_POSITION",position)
-                startActivity(it)
-            }
-        }*/
+        val imgBtnAddCarrera = findViewById<ImageButton>(R.id.imgBtnAddCarrera)
+
+        imgBtnAddCarrera.setOnClickListener {
+            val i = Intent(this, RegisterCarreraActivity::class.java)
+            startActivity(i)
+        }
 
         findViewById<SearchView>(R.id.svNombreCarrera).setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -75,7 +74,7 @@ class CarreraActivity : AppCompatActivity() {
         val itemTouchHelperCallback =
             object : ItemTouchHelper.SimpleCallback(
                 ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.START or ItemTouchHelper.END,
-                ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
+                ItemTouchHelper.RIGHT
             ) {
                 override fun onMove(
                     recyclerView: RecyclerView,
@@ -116,7 +115,7 @@ class CarreraActivity : AppCompatActivity() {
                         lista.adapter?.notifyItemRemoved(position)
                         //Este es el Intent que enviara a un formulario para editar al aplicante
                         Intent(this@CarreraActivity,CursoActivity::class.java).also {
-                            it.putExtra("EXTRA_CURSO",carrera)
+                            it.putExtra("EXTRA_CARRERA",carrera.codigo)
                             it.putExtra("EXTRA_POSITION",position)
                             startActivity(it)
                         }

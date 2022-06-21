@@ -8,7 +8,7 @@
 
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:layout_margin="5dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
@@ -19,51 +19,51 @@
                 android:layout_height="match_parent">
 
             <TextView
-                    android:text="CODIGO"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tvCodigoCarrera"
-                    android:textSize="20dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginStart="16dp" app:layout_constraintVertical_bias="0.506"
-                    android:textStyle="bold"/>
-            <TextView
-                    android:text="Nombre"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/tvNombreCurso"
-                    app:layout_constraintStart_toEndOf="@+id/tvCodigoCarrera"
-                    android:layout_marginStart="24dp" app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginTop="4dp" android:textStyle="bold" android:textSize="16sp"/>
-            <TextView
-                    android:text="Creditos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/tvCreditosCurso"
-                    app:layout_constraintStart_toEndOf="@+id/tvCodigoCarrera"
-                    android:layout_marginStart="28dp" app:layout_constraintTop_toBottomOf="@+id/tvNombreCurso"
-                    android:layout_marginTop="8dp" android:textStyle="bold"/>
-            <Button
-                    android:text="Grupos"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/btnCursosGrupos"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="4dp" app:layout_constraintBottom_toBottomOf="parent"
-                    android:backgroundTint="@color/black" app:layout_constraintVertical_bias="0.9"/>
-            <TextView
-                    android:text="Titulo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/tvCursoTitulo"
-                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/tvNombreCurso"
-                    android:layout_marginTop="4dp" android:layout_marginStart="28dp" android:textStyle="bold"/>
-            <TextView
                     android:text="Horas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/tvHorasCurso"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/tvCreditosCurso"
-                    app:layout_constraintTop_toBottomOf="@+id/tvCursoTitulo" android:layout_marginTop="8dp"
-                    android:layout_marginStart="24dp"/>
+                    app:layout_constraintEnd_toStartOf="@+id/imgBtnGrupos" app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintHorizontal_bias="0.261" android:layout_marginTop="36dp"/>
+            <TextView
+                    android:text="CODIGO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tvCodigoCurso"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="4dp" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="12dp" android:textStyle="bold" android:textSize="20sp"/>
+            <TextView
+                    android:text="Nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tvNombreCurso"
+                    app:layout_constraintStart_toEndOf="@+id/tvCodigoCurso" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="4dp" android:layout_marginStart="24dp" android:textStyle="bold"/>
+            <TextView
+                    android:text="Creditos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tvCreditosCurso"
+                    app:layout_constraintStart_toEndOf="@+id/tvCodigoCurso"
+                    android:layout_marginStart="20dp" app:layout_constraintTop_toBottomOf="@+id/tvNombreCurso"
+                    android:layout_marginTop="12dp" android:textStyle="bold"/>
+            <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="41dp" app:srcCompat="@drawable/ic_baseline_delete_24"
+                    android:id="@+id/imgButtonBorrarCurso"
+                    android:backgroundTint="#E40303" app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="12dp"
+                    android:layout_marginEnd="4dp"/>
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_baseline_account_box_24"
+                    android:id="@+id/imgBtnGrupos"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imgButtonBorrarCurso" android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp" android:backgroundTint="#4995E4"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

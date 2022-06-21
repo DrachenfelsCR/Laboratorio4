@@ -11,8 +11,9 @@
         <entry key="..\:/UNA/Laboratorio4/app/src/main/res/layout/activity_historial.xml" value="0.333786231884058" />
         <entry key="..\:/UNA/Laboratorio4/app/src/main/res/layout/activity_login.xml" value="0.333786231884058" />
         <entry key="..\:/UNA/Laboratorio4/app/src/main/res/layout/activity_main.xml" value="0.12" />
+        <entry key="..\:/UNA/Laboratorio4/app/src/main/res/layout/activity_register_carrera.xml" value="0.33" />
         <entry key="..\:/UNA/Laboratorio4/app/src/main/res/layout/nav_header.xml" value="1.2401315789473684" />
-        <entry key="..\:/UNA/Laboratorio4/app/src/main/res/layout/recycler_view_row_carrera.xml" value="0.25" />
+        <entry key="..\:/UNA/Laboratorio4/app/src/main/res/layout/recycler_view_row_carrera.xml" value="0.33" />
         <entry key="..\:/UNA/Laboratorio4/app/src/main/res/layout/recycler_view_row_curso.xml" value="0.36666666666666664" />
         <entry key="..\:/UNA/Laboratorio4/app/src/main/res/menu/nav_drawer_menu.xml" value="0.38125" />
       </map>
