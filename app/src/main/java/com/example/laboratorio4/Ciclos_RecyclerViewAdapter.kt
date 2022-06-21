@@ -12,40 +12,32 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 
-class Cursos_RecyclerViewAdapter (private var items: ArrayList<CursosItem>) : RecyclerView.Adapter<RecyclerView.ViewHolder>(),
+class Ciclos_RecyclerViewAdapter (private var items: ArrayList<CiclosItem>) : RecyclerView.Adapter<RecyclerView.ViewHolder>(),
     Filterable {
-    var itemList: ArrayList<CursosItem>? = null
-    var cursosDAO = CursosDAO.instance
+    var itemList: ArrayList<CiclosItem>? = null
+    var ciclosDao = CiclosDAO.instance
     private lateinit var builder: AlertDialog.Builder
 
     init {
-        val arr =  cursosDAO.getCursos()
+        val arr =  ciclosDao.getCiclos()
         this.itemList = arr
-
     }
 
     inner class AplicanteHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_row_curso, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_row_ciclo, parent, false)
         return AplicanteHolder(view)
     }
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = itemList?.get(position)
-        holder.itemView.findViewById<TextView>(R.id.tvCodigoCurso)?.text = item?.codigo
-        holder.itemView.findViewById<TextView>(R.id.tvNombreCurso)?.text = item?.nombre
-        holder.itemView.findViewById<TextView>(R.id.tvCreditosCurso)?.text = "Creditos: " + item?.creditos.toString()
-        holder.itemView.findViewById<TextView>(R.id.tvHorasCurso)?.text =  "Horas: " + item?.horasPorSemana.toString()
-
-        builder = AlertDialog.Builder(holder.itemView.context)
-
-        holder.itemView.findViewById<ImageButton>(R.id.btnGruposIr).setOnClickListener {
-            //val i = Intent(holder.itemView.context,CursoActivity::class.java)
-           // ContextCompat.startActivity(holder.itemView.context, i, null)
-        }
-
+        holder.itemView.findViewById<TextView>(R.id.tvCicloAnnio)?.text = item?.annio.toString()
+        holder.itemView.findViewById<TextView>(R.id.tvCicloNCiclo)?.text = "Ciclo: " + item?.numeroCiclo.toString()
+        holder.itemView.findViewById<TextView>(R.id.tvCicloFechaInicio)?.text = "Fecha Inicio: " + item?.fechaInicio
+        holder.itemView.findViewById<TextView>(R.id.tvCicloFechaFin)?.text =  "Fecha Fin: " + item?.fechaFin
+        holder.itemView.findViewById<TextView>(R.id.tvCicloTitulo)?.text =  item?.titulo
     }
 
     override fun getItemCount(): Int {
@@ -59,9 +51,9 @@ class Cursos_RecyclerViewAdapter (private var items: ArrayList<CursosItem>) : Re
                 if (charSearch.isEmpty()) {
                     itemList = items
                 } else {
-                    val resultList = ArrayList<CursosItem>()
+                    val resultList = ArrayList<CiclosItem>()
                     for (row in items) {
-                        if (row.nombre.toLowerCase().contains(charSearch.toLowerCase()) || row.codigo.toLowerCase().contains(charSearch.toLowerCase())) {
+                        if (row.annio.toString().contains(charSearch.toLowerCase())) {
                             resultList.add(row)
                         }
                     }
@@ -74,7 +66,7 @@ class Cursos_RecyclerViewAdapter (private var items: ArrayList<CursosItem>) : Re
 
             @Suppress("UNCHECKED_CAST")
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                itemList = results?.values as ArrayList<CursosItem>
+                itemList = results?.values as ArrayList<CiclosItem>
                 notifyDataSetChanged()
             }
 

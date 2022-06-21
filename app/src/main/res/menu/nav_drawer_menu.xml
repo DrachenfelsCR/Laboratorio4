@@ -6,7 +6,7 @@
             android:title="Carreras"
         />
     <item
-            android:id="@+id/item2"
-            android:title="Item 2"
+            android:id="@+id/ciclosOption"
+            android:title="Ciclos"
     />
 </menu>

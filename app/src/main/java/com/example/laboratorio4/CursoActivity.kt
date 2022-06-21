@@ -4,6 +4,9 @@ import android.content.Intent
 import android.graphics.Canvas
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -22,16 +25,18 @@ class CursoActivity : AppCompatActivity() {
     var archived = ArrayList<CursosItem>()
     val oracleDao = OracleDAO.instance
     var cursos = CursosDAO.instance
+    private lateinit var builder: AlertDialog.Builder
 
+    private fun deleteCurso(cursoBorrar : CursosItem){
 
-    private fun getListOfCursos() {
-        val codigoCarrera = intent.getStringExtra("EXTRA_CARRERA")
-        if (codigoCarrera != null) {
-            oracleDao.loadAllCursos(codigoCarrera)
-        }
+        oracleDao.deleteCurso(this,cursoBorrar.codigo)
 
+        Toast.makeText(this, "Curso Borrado", Toast.LENGTH_LONG).show()
+
+    }
+    private fun getListOfCursos(codigoCarrera : String) {
+        oracleDao.loadAllCursos(codigoCarrera)
         val newCursos = ArrayList<CursosItem>()
-
         for (c in cursos.getCursos()) {
             newCursos.add(c)
         }
@@ -45,7 +50,17 @@ class CursoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_curso)
         lista = findViewById(R.id.listRecyclerViewCursos)
-        getListOfCursos()
+        builder = AlertDialog.Builder(this)
+        val codigoCarrera = intent.getStringExtra("EXTRA_CARRERA")
+        getListOfCursos(codigoCarrera.toString())
+
+        val imgBtnRegistrarCurso = findViewById<ImageButton>(R.id.imgBtnRegistrarCiclo)
+
+        imgBtnRegistrarCurso.setOnClickListener {
+            val i = Intent(this, RegistrarCursoActivity::class.java)
+            i.putExtra("EXTRA_CARRERA",codigoCarrera)
+            startActivity(i)
+        }
 
         findViewById<SearchView>(R.id.svNombreCurso).setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -75,6 +90,7 @@ class CursoActivity : AppCompatActivity() {
                     return false
                 }
                 override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                    val codigoCarrera = intent.getStringExtra("EXTRA_CARRERA")
                     position = viewHolder.adapterPosition
                     if (direction == ItemTouchHelper.LEFT) {
                         curso = CursosItem(
@@ -83,16 +99,14 @@ class CursoActivity : AppCompatActivity() {
                             cursos.getCursos()[position].horasPorSemana,
                             cursos.getCursos()[position].nombre
                         )
-                        //cursos.deleteCurso(position)
-                        //DBHelper.borrarCurso(curso._id) AQUI PONER FUN DE BORRAR
+                        deleteCurso(curso)
                         lista.adapter?.notifyItemRemoved(position)
-                        Snackbar.make(lista, curso.nombre + "Ha sido eliminado...", Snackbar.LENGTH_LONG)
+                        /*Snackbar.make(lista, curso.nombre + "Ha sido eliminado...", Snackbar.LENGTH_LONG)
                             .setAction("Undo") {
                                 cursos.getCursos().add(position, curso)
                                 lista.adapter?.notifyItemInserted(position)
-                            }.show()
-                        adaptador = Cursos_RecyclerViewAdapter(cursos.getCursos())
-                        lista.adapter = adaptador
+                            }.show()*/
+
                     } else {
                         curso = CursosItem(
                             cursos.getCursos()[position].codigo,
@@ -118,7 +132,8 @@ class CursoActivity : AppCompatActivity() {
                         lista.adapter = adaptador
                     }
 
-                    getListOfCursos()
+
+                    getListOfCursos(codigoCarrera.toString())
 
                 }
 
@@ -141,6 +156,7 @@ class CursoActivity : AppCompatActivity() {
 
     override fun onResume(){
         super.onResume()
-        getListOfCursos()
+        val codigoCarrera = intent.getStringExtra("EXTRA_CARRERA")
+        getListOfCursos(codigoCarrera.toString())
     }
 }

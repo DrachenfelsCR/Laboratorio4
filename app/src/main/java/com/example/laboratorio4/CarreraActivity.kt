@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -74,7 +75,7 @@ class CarreraActivity : AppCompatActivity() {
         val itemTouchHelperCallback =
             object : ItemTouchHelper.SimpleCallback(
                 ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.START or ItemTouchHelper.END,
-                ItemTouchHelper.RIGHT
+                ItemTouchHelper.UP
             ) {
                 override fun onMove(
                     recyclerView: RecyclerView,

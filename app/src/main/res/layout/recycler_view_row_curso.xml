@@ -24,8 +24,8 @@
                     android:layout_height="wrap_content" android:id="@+id/tvHorasCurso"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/tvCreditosCurso"
-                    app:layout_constraintEnd_toStartOf="@+id/imgBtnGrupos" app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintHorizontal_bias="0.261" android:layout_marginTop="36dp"/>
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="36dp"/>
             <TextView
                     android:text="CODIGO"
                     android:layout_width="wrap_content"
@@ -46,20 +46,13 @@
                     app:layout_constraintStart_toEndOf="@+id/tvCodigoCurso"
                     android:layout_marginStart="20dp" app:layout_constraintTop_toBottomOf="@+id/tvNombreCurso"
                     android:layout_marginTop="12dp" android:textStyle="bold"/>
-            <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="41dp" app:srcCompat="@drawable/ic_baseline_delete_24"
-                    android:id="@+id/imgButtonBorrarCurso"
-                    android:backgroundTint="#E40303" app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="12dp"
-                    android:layout_marginEnd="4dp"/>
-            <ImageButton
+            <Button
+                    android:text="GRUPOS"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_baseline_account_box_24"
-                    android:id="@+id/imgBtnGrupos"
+                    android:layout_height="wrap_content" android:id="@+id/btnGruposIr"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imgButtonBorrarCurso" android:layout_marginTop="12dp"
-                    android:layout_marginEnd="8dp" android:backgroundTint="#4995E4"/>
+                    android:layout_marginTop="12dp" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="16dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
     <TextView

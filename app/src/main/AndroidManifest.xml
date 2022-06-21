@@ -16,6 +16,15 @@
             android:theme="@style/Theme.Laboratorio4"
             android:usesCleartextTraffic="true">
         <activity
+                android:name=".RegisterCicloActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".CiclosActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".RegistrarCursoActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".RegisterCarreraActivity"
                 android:exported="true"/>
         <activity

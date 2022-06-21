@@ -7,12 +7,12 @@
         android:layout_height="match_parent"
         tools:context=".CursoActivity">
     <androidx.appcompat.widget.SearchView
-            android:layout_width="398dp"
-            android:layout_height="69dp"
+            android:layout_width="282dp"
+            android:layout_height="50dp"
             android:id="@+id/svNombreCurso"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="4dp"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="409dp"
             android:layout_height="660dp"
@@ -22,4 +22,11 @@
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/svNombreCurso"
     />
+    <ImageButton
+            android:layout_width="86dp"
+            android:layout_height="54dp" app:srcCompat="@android:drawable/ic_menu_add"
+            android:id="@+id/imgBtnRegistrarCiclo"
+            app:layout_constraintStart_toEndOf="@+id/svNombreCurso" android:layout_marginStart="12dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="4dp" android:backgroundTint="#31CC33"
+            tools:ignore="SpeakableTextPresentCheck"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

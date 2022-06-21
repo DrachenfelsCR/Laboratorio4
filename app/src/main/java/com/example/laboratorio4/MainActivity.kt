@@ -39,6 +39,11 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(applicationContext,"Option only for admin!", Toast.LENGTH_SHORT).show()
                     }
                 }
+                R.id.ciclosOption -> {
+                    val i = Intent(this, CiclosActivity::class.java)
+                    //i.putExtra("USER_EXTRA",user?.user!!)
+                    startActivity(i)
+                }
             }
             true
         }
