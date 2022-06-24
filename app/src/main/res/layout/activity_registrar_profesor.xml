@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RegistrarProfesorActivity">
+
+    <TextView
+            android:text="Registrar Profesor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvRegistrarProfesorTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="40dp" android:textSize="24sp" android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imgBtnVolverRegistrarProfesor" android:layout_marginStart="12dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etRegistrarProfesorId"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegistrarProfesorTitle" android:layout_marginTop="44dp"
+            android:hint="Id Profesor"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etRegistrarProfesorNombre"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.502" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etRegistrarProfesorId" android:layout_marginTop="30dp"
+            android:hint="Nombre"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etRegistrarProfesorTelefono"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.502" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etRegistrarProfesorPassword" android:layout_marginTop="30dp"
+            android:hint="Telefono"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etRegistrarProfesorEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.502" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etRegistrarProfesorTelefono" android:layout_marginTop="30dp"
+            android:hint="Email"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etRegistrarProfesorPassword"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etRegistrarProfesorNombre" android:layout_marginTop="30dp"
+            android:hint="Contraseña"/>
+    <Button
+            android:text="ENVIAR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnSubmitProfessor"
+            app:layout_constraintTop_toBottomOf="@+id/etRegistrarProfesorEmail"
+            android:layout_marginTop="40dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.498" app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="#0B0A0A"/>
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="?attr/homeAsUpIndicator"
+            android:id="@+id/imgBtnVolverRegistrarProfesor"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="40dp" android:layout_marginStart="40dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

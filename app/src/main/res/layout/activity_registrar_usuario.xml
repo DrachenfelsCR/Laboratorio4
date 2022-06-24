@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RegistrarUsuarioActivity">
+
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="?attr/homeAsUpIndicator" android:id="@+id/imgBtnVolverRegistrarUsuario"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="40dp" android:layout_marginStart="44dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etRegistrarUsuarioRol"
+            app:layout_constraintTop_toBottomOf="@+id/etRegistrarUsuarioPassword"
+            android:layout_marginTop="45dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="112dp" android:hint="Rol (Admin/Matriculador)"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etRegistrarUsuarioId"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegistrarUsuarioTitle"
+            android:layout_marginTop="40dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="112dp" android:hint="Id Usuario"/>
+    <TextView
+            android:text="Registrar Usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvRegistrarUsuarioTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="48dp" android:textSize="20sp" android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imgBtnVolverRegistrarUsuario" android:layout_marginStart="32dp"/>
+    <Button
+            android:text="Enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnSubmitRegistrarUsuario"
+            android:backgroundTint="#151414" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etRegistrarUsuarioRol" android:layout_marginTop="68dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etRegistrarUsuarioPassword"
+            app:layout_constraintTop_toBottomOf="@+id/etRegistrarUsuarioId"
+            android:layout_marginTop="45dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="112dp" android:hint="Contraseña"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

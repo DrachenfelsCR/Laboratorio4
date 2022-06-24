@@ -44,6 +44,16 @@ class MainActivity : AppCompatActivity() {
                     //i.putExtra("USER_EXTRA",user?.user!!)
                     startActivity(i)
                 }
+                R.id.usersOption -> {
+                    val i = Intent(this, UserManagementActivity::class.java)
+                    //i.putExtra("USER_EXTRA",user?.user!!)
+                    startActivity(i)
+                }
+                R.id.HistorialAdminOption -> {
+                    val i = Intent(this, HistorialAlumnoAdminActivity::class.java)
+                    //i.putExtra("USER_EXTRA",user?.user!!)
+                    startActivity(i)
+                }
             }
             true
         }

@@ -100,13 +100,8 @@ class CursoActivity : AppCompatActivity() {
                             cursos.getCursos()[position].nombre
                         )
                         deleteCurso(curso)
+                        adaptador = Cursos_RecyclerViewAdapter(cursos.getCursos())
                         lista.adapter?.notifyItemRemoved(position)
-                        /*Snackbar.make(lista, curso.nombre + "Ha sido eliminado...", Snackbar.LENGTH_LONG)
-                            .setAction("Undo") {
-                                cursos.getCursos().add(position, curso)
-                                lista.adapter?.notifyItemInserted(position)
-                            }.show()*/
-
                     } else {
                         curso = CursosItem(
                             cursos.getCursos()[position].codigo,

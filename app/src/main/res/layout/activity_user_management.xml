@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".UserManagementActivity">
+
+    <TextView
+            android:text="User Management"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvUserManagementTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:textSize="24sp" android:textStyle="bold" app:layout_constraintHorizontal_bias="0.497"/>
+    <androidx.cardview.widget.CardView
+            android:layout_width="410dp"
+            android:layout_height="110dp"
+            app:cardBackgroundColor="#99D4EA"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/cardView" app:layout_constraintTop_toBottomOf="@+id/tvUserManagementTitle">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:text="Estudiate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tvAddUserStudent"
+                    android:textStyle="bold" android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView3" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="4dp"/>
+            <Button
+                    android:text="Agregar"
+                    android:layout_width="111dp"
+                    android:layout_height="38dp" android:id="@+id/btnAddNewStudent"
+                    app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="16dp" android:backgroundTint="#151313"/>
+            <ImageView
+                    android:layout_width="113dp"
+                    android:layout_height="109dp" app:srcCompat="@drawable/studentuser"
+                    android:id="@+id/imageView3"/>
+            <TextView
+                    android:text="Agregar nuevo estudiante"
+                    android:layout_width="196dp"
+                    android:layout_height="21dp" android:id="@+id/tvAddUserDescription"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView3" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="32dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" android:layout_marginTop="36dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:cardBackgroundColor="#EFAFAF" android:id="@+id/cardView2">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:text="Profesor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tvAddProfessorLabel"
+                    app:layout_constraintTop_toTopOf="parent" android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView4" android:layout_marginTop="16dp"
+                    android:textStyle="bold"/>
+            <ImageView
+                    android:layout_width="117dp"
+                    android:layout_height="111dp" app:srcCompat="@drawable/professor" android:id="@+id/imageView4"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tvAddProfessorDescription"
+                    android:text="Agregar nuevo profesor" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="44dp" app:layout_constraintStart_toEndOf="@+id/imageView4"
+                    android:layout_marginStart="12dp"/>
+            <Button
+                    android:text="Agregar"
+                    android:layout_width="107dp"
+                    android:layout_height="38dp" android:id="@+id/btnAgregarProfesor"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="72dp" android:layout_marginStart="168dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView4" android:backgroundTint="#1B1919"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="32dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.077"
+            app:layout_constraintHorizontal_bias="1.0" app:cardBackgroundColor="#CFCCCC" android:id="@+id/cardView3">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                    android:layout_width="114dp"
+                    android:layout_height="104dp" app:srcCompat="@drawable/users" android:id="@+id/imageView5"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            <TextView
+                    android:text="Usuario Nuevo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tvAddNewUserTitle"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView5" app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="16dp" android:textStyle="bold"/>
+            <TextView
+                    android:text="Agregar nuevo admin o matriculador"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/tvAddNewUserDescription"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="40dp" app:layout_constraintStart_toEndOf="@+id/imageView5"
+                    android:layout_marginStart="16dp"/>
+            <Button
+                    android:text="Agregar"
+                    android:layout_width="112dp"
+                    android:layout_height="39dp" android:id="@+id/btnAgregarNuevoUsuario"
+                    android:backgroundTint="#100F0F"
+                    app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="64dp"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <Button
+            android:text="Volver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnVolverUserManagement"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3"
+            android:layout_marginTop="80dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="#151212"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,4 +9,12 @@
             android:id="@+id/ciclosOption"
             android:title="Ciclos"
     />
+    <item
+            android:id="@+id/usersOption"
+            android:title="Manejar Usuarios"
+    />
+    <item
+            android:id="@+id/HistorialAdminOption"
+            android:title="Historial Alumno"
+    />
 </menu>

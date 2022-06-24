@@ -1,27 +1,26 @@
 package com.example.laboratorio4
+
 import android.content.Context
 import android.util.Log
-import androidx.recyclerview.widget.ItemTouchHelper
-import com.google.gson.Gson
-import okhttp3.*
-import java.io.IOException
-import java.util.concurrent.CountDownLatch
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withTimeout
 import com.android.volley.DefaultRetryPolicy
 import com.android.volley.Request
-import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.RequestFuture
 import com.android.volley.toolbox.StringRequest
 import com.cfsuman.jetpack.VolleySingleton
+import com.google.gson.Gson
+import kotlinx.coroutines.CoroutineScope
+import okhttp3.*
 import org.json.JSONObject
-import ru.gildor.coroutines.okhttp.await
+import java.io.IOException
+import java.util.concurrent.CountDownLatch
+
 
 class OracleDAO {
     var carreras = CarrerasDAO.instance
     var cursos = CursosDAO.instance
     var ciclos = CiclosDAO.instance
-
+    var usuario = UsuarioDAO.instance
     init {
 
     }
@@ -122,6 +121,108 @@ class OracleDAO {
                 // Process the json
                 try {
                     Log.d("Succesful", "Response: ${response.get("Status")}")
+                }catch (e:Exception){
+                    Log.d("Error", "Exception: ${e.message.toString()}")
+                }
+            }, {
+                // Error in request
+                Log.d("VolleyError", "Volley error: $it")
+            })
+
+        // Volley request policy, only one time request to avoid duplicate transaction
+        request.retryPolicy = DefaultRetryPolicy(
+            DefaultRetryPolicy.DEFAULT_TIMEOUT_MS,
+            // 0 means no retry
+            0, // DefaultRetryPolicy.DEFAULT_MAX_RETRIES = 2
+            1f // DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        )
+        // Add the volley post request to the request queue
+        VolleySingleton.getInstance(con).addToRequestQueue(request)
+    }
+
+    fun postEstudiante(con : Context,alumno:AlumnoCreacion){
+        var url = "http://10.0.2.2:8080/Willyrex/api/users/addEstudiante"
+
+        val jsonObject = JSONObject()
+        jsonObject.put("id",alumno.id)
+        jsonObject.put("nombre",alumno.nombre)
+        jsonObject.put("password",alumno.password)
+        jsonObject.put("codigoCarrera",alumno.codigoCarrera)
+        jsonObject.put("email",alumno.email)
+        jsonObject.put("fechaNacimiento",alumno.fechaNacimiento)
+        jsonObject.put("rol",alumno.rol)
+        jsonObject.put("telefono",alumno.telefono)
+        val request = JsonObjectRequest(Request.Method.POST,url,jsonObject,
+            { response ->
+                // Process the json
+                try {
+                    Log.d("Succesful", "Response: $response")
+                }catch (e:Exception){
+                    Log.d("Error", "Exception: ${e.message.toString()}")
+                }
+            }, {
+                // Error in request
+                Log.d("VolleyError", "Volley error: $it")
+            })
+
+        // Volley request policy, only one time request to avoid duplicate transaction
+        request.retryPolicy = DefaultRetryPolicy(
+            DefaultRetryPolicy.DEFAULT_TIMEOUT_MS,
+            // 0 means no retry
+            0, // DefaultRetryPolicy.DEFAULT_MAX_RETRIES = 2
+            1f // DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        )
+        // Add the volley post request to the request queue
+        VolleySingleton.getInstance(con).addToRequestQueue(request)
+    }
+
+    fun postUsuario(con : Context,user:UsuarioCreacion){
+        var url = "http://10.0.2.2:8080/Willyrex/api/users/addUser"
+
+        val jsonObject = JSONObject()
+        jsonObject.put("id",user.id)
+        jsonObject.put("rol",user.rol)
+        jsonObject.put("password",user.password)
+
+        val request = JsonObjectRequest(Request.Method.POST,url,jsonObject,
+            { response ->
+                // Process the json
+                try {
+                    Log.d("Succesful", "Response: $response")
+                }catch (e:Exception){
+                    Log.d("Error", "Exception: ${e.message.toString()}")
+                }
+            }, {
+                // Error in request
+                Log.d("VolleyError", "Volley error: $it")
+            })
+
+        // Volley request policy, only one time request to avoid duplicate transaction
+        request.retryPolicy = DefaultRetryPolicy(
+            DefaultRetryPolicy.DEFAULT_TIMEOUT_MS,
+            // 0 means no retry
+            0, // DefaultRetryPolicy.DEFAULT_MAX_RETRIES = 2
+            1f // DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        )
+        // Add the volley post request to the request queue
+        VolleySingleton.getInstance(con).addToRequestQueue(request)
+    }
+    fun postProfesor(con : Context,profesor:ProfesorCreacion){
+        var url = "http://10.0.2.2:8080/Willyrex/api/users/addProfesor"
+
+        val jsonObject = JSONObject()
+        jsonObject.put("id",profesor.id)
+        jsonObject.put("nombre",profesor.nombre)
+        jsonObject.put("password",profesor.password)
+        jsonObject.put("rol",profesor.rol)
+        jsonObject.put("telefono",profesor.telefono)
+        jsonObject.put("email",profesor.email)
+
+        val request = JsonObjectRequest(Request.Method.POST,url,jsonObject,
+            { response ->
+                // Process the json
+                try {
+                    Log.d("Succesful", "Response: $response")
                 }catch (e:Exception){
                     Log.d("Error", "Exception: ${e.message.toString()}")
                 }
@@ -266,5 +367,43 @@ class OracleDAO {
             }
         })
         countDownLatch.await();
+    }
+
+
+    fun Login(con: Context, password: String, nombre: String) : String{
+        var url = "http://10.0.2.2:8080/Willyrex/api/login/sesion"
+
+        val jsonObject = JSONObject()
+        jsonObject.put("password",password)
+        jsonObject.put("nombre",nombre)
+
+        val request = JsonObjectRequest(Request.Method.POST,url,jsonObject,
+            { response ->
+                // Process the json
+                try {
+                    Log.d("Succesful", "Response: $response")
+                    var returnedUser = Usuario(response.get("nombre").toString(),response.get("rol").toString())
+                    usuario.setUsuario(returnedUser)
+
+                }catch (e:Exception){
+                    Log.d("Error", "Exception: ${e.message.toString()}")
+                    var returnedUser = Usuario("Error","Error")
+                    usuario.setUsuario(returnedUser)
+                }
+            }, {
+                // Error in request
+                Log.d("VolleyError", "Volley error: $it")
+            })
+        // Volley request policy, only one time request to avoid duplicate transaction
+        request.retryPolicy = DefaultRetryPolicy(
+            DefaultRetryPolicy.DEFAULT_TIMEOUT_MS,
+            // 0 means no retry
+            0, // DefaultRetryPolicy.DEFAULT_MAX_RETRIES = 2
+            1f // DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        )
+        // Add the volley post request to the request queue
+        VolleySingleton.getInstance(con).addToRequestQueue(request)
+
+        return usuario.getUsuario().rol
     }
 }
