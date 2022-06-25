@@ -30,14 +30,9 @@ class MainActivity : AppCompatActivity() {
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.carrerasOption -> {
-                    if(true){
-                        val i = Intent(this, CarreraActivity::class.java)
-                        //i.putExtra("USER_EXTRA",user?.user!!)
-                        startActivity(i)
-
-                    }else{
-                        Toast.makeText(applicationContext,"Option only for admin!", Toast.LENGTH_SHORT).show()
-                    }
+                val i = Intent(this, CarreraActivity::class.java)
+                //i.putExtra("USER_EXTRA",user?.user!!)
+                startActivity(i)
                 }
                 R.id.ciclosOption -> {
                     val i = Intent(this, CiclosActivity::class.java)

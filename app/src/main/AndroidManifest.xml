@@ -16,9 +16,26 @@
             android:theme="@style/Theme.Laboratorio4"
             android:usesCleartextTraffic="true">
         <activity
+                android:name=".EstudianteHistorialActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".InsertarNotaActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".ProfesorAlumnosActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".ProfesorActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".MatriculadorActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".MatricularActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".HistorialAlumnoAdminActivity"
                 android:exported="true">
-
         </activity>
         <activity
                 android:name=".RegistrarUsuarioActivity"

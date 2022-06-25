@@ -8,36 +8,34 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
-class AlumnoActivity : AppCompatActivity() {
+class ProfesorActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_alumno)
+        setContentView(R.layout.activity_profesor)
+        val idProfesor = intent.getStringExtra("EXTRA_IDPROFESOR")
+        var drawerLayoutProfesor = findViewById<DrawerLayout>(R.id.drawerLayoutProfesor)
+        var navViewProfesor = findViewById<NavigationView>(R.id.navViewProfesor)
 
-        var drawerLayoutAlumno = findViewById<DrawerLayout>(R.id.drawerLayoutAlumno)
-        var navViewAlumno = findViewById<NavigationView>(R.id.navViewAlumno)
 
-        val userId = intent.getStringExtra("EXTRA_IDALUMNO")
-
-        toggle = ActionBarDrawerToggle(this, drawerLayoutAlumno, R.string.open,R.string.close)
-        drawerLayoutAlumno.addDrawerListener(toggle)
+        toggle = ActionBarDrawerToggle(this, drawerLayoutProfesor, R.string.open,R.string.close)
+        drawerLayoutProfesor.addDrawerListener(toggle)
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        navViewAlumno.setNavigationItemSelectedListener {
+        navViewProfesor.setNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.historialAcademicoOption -> {
-                    val i = Intent(this, EstudianteHistorialActivity::class.java)
-                    i.putExtra("EXTRA_IDALUMNO",userId)
+                R.id.profesorOption -> {
+                    val i = Intent(this, ProfesorAlumnosActivity::class.java)
+                    i.putExtra("EXTRA_IDPROFESOR",idProfesor)
                     startActivity(i)
                 }
 
             }
             true
         }
-
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)){

@@ -42,6 +42,16 @@ class LoginActivity : AppCompatActivity() {
                         }
                         "Estudiante"->{
                             val i = Intent(this, AlumnoActivity::class.java)
+                            i.putExtra("EXTRA_IDALUMNO",etLoginUsername.text.toString())
+                            startActivity(i)
+                        }
+                        "Matriculador"->{
+                            val i = Intent(this, MatriculadorActivity::class.java)
+                            startActivity(i)
+                        }
+                        "Profesor"->{
+                            val i = Intent(this, ProfesorActivity::class.java)
+                            i.putExtra("EXTRA_IDPROFESOR",etLoginUsername.text.toString())
                             startActivity(i)
                         }
                     }

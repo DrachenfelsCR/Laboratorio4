@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".RegisterCicloActivity">
+        tools:context=".RegisterCicloActivity" android:background="@drawable/lightbluebg">
 
     <TextView
             android:text="Insertar Ciclo"
@@ -105,7 +105,8 @@
             android:backgroundTint="#61B8DA"/>
     <ImageButton
             android:layout_width="58dp"
-            android:layout_height="50dp" app:srcCompat="?attr/homeAsUpIndicator" android:id="@+id/imgBtnRegistrarCicloVolver"
+            android:layout_height="50dp" app:srcCompat="?attr/homeAsUpIndicator"
+            android:id="@+id/imgBtnRegistrarCicloVolver"
             app:layout_constraintEnd_toStartOf="@+id/tvLabelRegistrarCiclo" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="40dp" android:layout_marginEnd="20dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

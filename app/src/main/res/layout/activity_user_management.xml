@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".UserManagementActivity">
+        tools:context=".UserManagementActivity" android:background="@drawable/matriculadorbg">
 
     <TextView
             android:text="User Management"
@@ -13,7 +13,8 @@
             android:layout_height="wrap_content" android:id="@+id/tvUserManagementTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:textSize="24sp" android:textStyle="bold" app:layout_constraintHorizontal_bias="0.497"/>
+            android:textSize="24sp" android:textStyle="bold" app:layout_constraintHorizontal_bias="0.497"
+            android:textColor="#EFEAEA"/>
     <androidx.cardview.widget.CardView
             android:layout_width="410dp"
             android:layout_height="110dp"

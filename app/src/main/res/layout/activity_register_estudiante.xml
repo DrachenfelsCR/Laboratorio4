@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".RegisterEstudianteActivity">
+        tools:context=".RegisterEstudianteActivity" android:background="@drawable/lightbluebg">
 
     <TextView
             android:text="Registrar Estudiante"
@@ -13,7 +13,8 @@
             android:layout_height="wrap_content" android:id="@+id/tvRegistrarEstudiante"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="16dp" android:textSize="16sp" android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/imgBtnVolverRegistrarEstudiante" android:layout_marginStart="24dp"/>
+            app:layout_constraintStart_toEndOf="@+id/imgBtnVolverRegistrarEstudiante"
+            android:layout_marginStart="24dp"/>
     <TextView
             android:text="Estudiante Id"
             android:layout_width="wrap_content"
@@ -121,7 +122,8 @@
             android:layout_marginStart="16dp" android:hint="Codigo"/>
     <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" app:srcCompat="?attr/homeAsUpIndicator" android:id="@+id/imgBtnVolverRegistrarEstudiante"
+            android:layout_height="wrap_content" app:srcCompat="?attr/homeAsUpIndicator"
+            android:id="@+id/imgBtnVolverRegistrarEstudiante"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="56dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="4dp"/>
     <Button

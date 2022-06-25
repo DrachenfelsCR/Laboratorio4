@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".RegisterCarreraActivity">
+        tools:context=".RegisterCarreraActivity" android:background="@drawable/graybg">
 
     <EditText
             android:layout_width="200dp"
@@ -49,14 +49,15 @@
             android:layout_height="wrap_content" android:id="@+id/tvLabelRegistrarCarreraTitulo"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="28dp"
             app:layout_constraintTop_toBottomOf="@+id/tvLabelRegistrarCarreraNombre" android:layout_marginTop="68dp"
-            android:textStyle="bold" android:textSize="16sp"/>
+            android:textStyle="bold" android:textSize="16sp" android:textColor="#F3EFEF"/>
     <TextView
             android:text="Insertar Carrera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/tvTituloRegistrarCarrera"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.085" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:textSize="24sp" android:textStyle="bold"/>
+            app:layout_constraintEnd_toEndOf="parent" android:textSize="24sp" android:textStyle="bold"
+            android:textColor="#DCD7D7"/>
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="?attr/actionModeCloseDrawable"
@@ -70,12 +71,12 @@
             android:layout_marginTop="76dp"
             app:layout_constraintTop_toBottomOf="@+id/tvTituloRegistrarCarrera"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="28dp" android:textStyle="bold"
-            android:textSize="16sp"/>
+            android:textSize="16sp" android:textColor="#ECE4E4"/>
     <TextView
             android:text="Nombre Carrera"
             android:layout_width="120dp"
             android:layout_height="wrap_content" android:id="@+id/tvLabelRegistrarCarreraNombre"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="28dp"
             app:layout_constraintTop_toBottomOf="@+id/tvLabelRegistrarCarreraCodigo" android:layout_marginTop="68dp"
-            android:textStyle="bold" android:textSize="16sp"/>
+            android:textStyle="bold" android:textSize="16sp" android:textColor="#EFE6E6"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
