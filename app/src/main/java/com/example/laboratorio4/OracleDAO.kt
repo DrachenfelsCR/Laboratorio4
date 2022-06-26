@@ -403,6 +403,5 @@ class OracleDAO {
         )
         // Add the volley post request to the request queue
         VolleySingleton.getInstance(con).addToRequestQueue(request)
-        Thread.sleep(1000)
     }
 }

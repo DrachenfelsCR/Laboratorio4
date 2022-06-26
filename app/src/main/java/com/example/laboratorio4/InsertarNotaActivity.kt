@@ -35,6 +35,7 @@ class InsertarNotaActivity : AppCompatActivity() {
 
         btnEnviarNota.setOnClickListener {
             val nota = etIngresarNota.text.toString().toInt()
+            etIngresarNota.text.clear()
             sendMessage(datoNotaProfesor,codigoCurso,nota)
             Thread.sleep(1000)
             Toast.makeText(this,"Nota insertada",Toast.LENGTH_SHORT).show()

@@ -18,7 +18,7 @@ class RegistrarGrupoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrar_grupo)
-
+        createWebSocketClient()
         val etRegistrarGrupoIdProfesor = findViewById<EditText>(R.id.etRegistrarGrupoIdProfesor)
         val etRegistrarGrupoIdCiclo = findViewById<EditText>(R.id.etRegistrarGrupoIdCiclo)
         val etRegistrarGrupoHoraInicio = findViewById<EditText>(R.id.etRegistrarGrupoHoraInicio)
@@ -29,7 +29,7 @@ class RegistrarGrupoActivity : AppCompatActivity() {
         btnRegistrarGrupo.setOnClickListener {
             if (etRegistrarGrupoIdProfesor.text.isEmpty() || etRegistrarGrupoIdCiclo.text.isEmpty() ||
                 etRegistrarGrupoHoraInicio.text.isEmpty() || etRegistrarGrupoHoraFin.text.isEmpty()){
-                Toast.makeText(this,"Hay espacios vacios", Toast.LENGTH_SHORT)
+                Toast.makeText(this,"Hay espacios vacios", Toast.LENGTH_SHORT).show()
             }
             else{
                 val profesor = etRegistrarGrupoIdProfesor.text.toString()
@@ -45,7 +45,14 @@ class RegistrarGrupoActivity : AppCompatActivity() {
                 json.put("horaFinal",horaFinal)
                 json.put("codigoCurso",codigoCurso)
                 sendMessage(json)
-                Toast.makeText(this,"Grupo Insertado",Toast.LENGTH_LONG)
+                Thread.sleep(1000)
+
+               etRegistrarGrupoIdProfesor.text.clear()
+               etRegistrarGrupoIdCiclo.text.clear()
+                etRegistrarGrupoHoraInicio.text.clear()
+                etRegistrarGrupoHoraFin.text.clear()
+                Toast.makeText(this,"Grupo Insertado", Toast.LENGTH_SHORT).show()
+                finish()
             }
         }
     }

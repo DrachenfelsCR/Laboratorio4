@@ -39,6 +39,7 @@ class RegisterCarreraActivity : AppCompatActivity() {
                 etRegistrarCarreraNombre.text.clear()
                 etRegistrarCarreraTitulo.text.clear()
                 oracleDao.postCarrera(this,nCarrera)
+                Thread.sleep(1000)
                 Toast.makeText(this,"INSERTADO EXITOSAMENTE", Toast.LENGTH_SHORT)
                 finish()
             }

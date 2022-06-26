@@ -43,10 +43,10 @@ class LoginActivity : AppCompatActivity() {
                             startActivity(i)
                         }
                         "Estudiante"->{
-                            etLoginUsername.text.clear()
-                            etLoginPassword.text.clear()
                             val i = Intent(this, AlumnoActivity::class.java)
                             i.putExtra("EXTRA_IDALUMNO",etLoginUsername.text.toString())
+                            etLoginUsername.text.clear()
+                            etLoginPassword.text.clear()
                             startActivity(i)
                         }
                         "Matriculador"->{
@@ -56,10 +56,10 @@ class LoginActivity : AppCompatActivity() {
                             startActivity(i)
                         }
                         "Profesor"->{
-                            etLoginUsername.text.clear()
-                            etLoginPassword.text.clear()
                             val i = Intent(this, ProfesorActivity::class.java)
                             i.putExtra("EXTRA_IDPROFESOR",etLoginUsername.text.toString())
+                            etLoginUsername.text.clear()
+                            etLoginPassword.text.clear()
                             startActivity(i)
                         }
                     }

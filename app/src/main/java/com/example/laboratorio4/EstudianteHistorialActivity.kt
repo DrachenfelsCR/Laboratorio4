@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
@@ -23,6 +24,7 @@ class EstudianteHistorialActivity : AppCompatActivity() {
     var archived = ArrayList<HistorialAdmin>()
     val oracleDao = OracleDAO.instance
     var historiales = HistorialDAO.instance
+    var ciclos = CiclosDAO.instance
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +35,14 @@ class EstudianteHistorialActivity : AppCompatActivity() {
         createWebSocketClient()
         val btnBuscarHistorial = findViewById<Button>(R.id.btnBuscarHistorial)
         val etHistorialAcademicoCiclo = findViewById<EditText>(R.id.etHistorialAcademicoCiclo)
+        val tvCiclos = findViewById<TextView>(R.id.tvCiclos)
+        oracleDao.loadAllCiclos()
+        tvCiclos.text  = ""
+        val newCiclos = ArrayList<CiclosItem>()
+        for (c in ciclos.getCiclos()) {
+           val strCiclo =  "Ciclo: " + c.idCiclo.toString() + "," +c.annio.toString() + "|"
+            tvCiclos.append(strCiclo)
+        }
 
         btnBuscarHistorial.setOnClickListener {
             val ciclo = etHistorialAcademicoCiclo.text.toString()

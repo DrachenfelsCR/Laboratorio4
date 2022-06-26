@@ -41,6 +41,7 @@ class ProfesorAlumnosActivity : AppCompatActivity() {
     lateinit var codigoCurso : String
     private lateinit var idProfesor : String
 
+
     private fun getListOfAlumnosNotas() {
 
         val newAlumnoGrupos = alumnosProfesorNota.getAlumnosProfesorDatos()
@@ -50,7 +51,17 @@ class ProfesorAlumnosActivity : AppCompatActivity() {
         lista.layoutManager = LinearLayoutManager(lista.context)
         lista.setHasFixedSize(true)
     }
+    private fun resetListOfAlumnosNotas() {
 
+        val newAlumnoGrupos =  ArrayList<DatoAlumnoNotaProfesor>()
+        alumnosProfesorNota.setAlumnosProfesorDatos(ArrayList<DatoAlumnoNotaProfesor>())
+
+    }
+    override fun onResume() {
+        super.onResume()
+        resetListOfAlumnosNotas()
+        getListOfAlumnosNotas()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profesor_alumnos)

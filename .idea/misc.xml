@@ -4,7 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/layout/activity_alumno.xml" value="0.36666666666666664" />
+        <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/layout/activity_ciclos.xml" value="0.24947916666666667" />
         <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/layout/activity_curso.xml" value="0.24947916666666667" />
+        <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/layout/activity_estudiante_historial.xml" value="0.24947916666666667" />
+        <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/layout/activity_matriculador.xml" value="0.33" />
+        <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/layout/activity_matricular.xml" value="0.24947916666666667" />
+        <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/layout/activity_profesor.xml" value="0.24947916666666667" />
         <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/layout/activity_registrar_grupo.xml" value="0.5" />
         <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/menu/nav_drawer_menu.xml" value="0.38125" />
         <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/menu/nav_drawer_menu_estudiante.xml" value="0.38125" />
