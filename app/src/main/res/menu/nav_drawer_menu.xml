@@ -17,4 +17,8 @@
             android:id="@+id/HistorialAdminOption"
             android:title="Historial Alumno"
     />
+    <item
+            android:id="@+id/adminLogoutOption"
+            android:title="Logout"
+    />
 </menu>

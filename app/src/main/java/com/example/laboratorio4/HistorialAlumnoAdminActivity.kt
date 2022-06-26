@@ -30,14 +30,13 @@ class HistorialAlumnoAdminActivity : AppCompatActivity() {
         lista = findViewById(R.id.listRecyclerViewHistorialAdmin)
         createWebSocketClient()
 
-        val etHistorialAcademicoCiclo = findViewById<EditText>(R.id.etHistorialAcademicoCiclo)
+        val etAdminHistorialBuscar = findViewById<EditText>(R.id.etAdminHistorialBuscar)
         val btnAdminBuscarHistorial = findViewById<Button>(R.id.btnAdminBuscarHistorial)
 
        // getListOfHistorialesAdmin()
 
         btnAdminBuscarHistorial.setOnClickListener {
-            val ciclo = etHistorialAcademicoCiclo.text.toString()
-            sendMessage(etHistorialAcademicoCiclo.text.toString())
+            sendMessage(etAdminHistorialBuscar.text.toString())
             Thread.sleep(1000)
             getListOfHistorialesAdmin()
         }

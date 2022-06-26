@@ -17,7 +17,7 @@ class ProfesorActivity : AppCompatActivity() {
         val idProfesor = intent.getStringExtra("EXTRA_IDPROFESOR")
         var drawerLayoutProfesor = findViewById<DrawerLayout>(R.id.drawerLayoutProfesor)
         var navViewProfesor = findViewById<NavigationView>(R.id.navViewProfesor)
-
+        val userDao = UsuarioDAO.instance
 
         toggle = ActionBarDrawerToggle(this, drawerLayoutProfesor, R.string.open,R.string.close)
         drawerLayoutProfesor.addDrawerListener(toggle)
@@ -32,7 +32,10 @@ class ProfesorActivity : AppCompatActivity() {
                     i.putExtra("EXTRA_IDPROFESOR",idProfesor)
                     startActivity(i)
                 }
-
+                R.id.logoutProfesor -> {
+                    userDao.setUsuario(Usuario("",""))
+                    finish()
+                }
             }
             true
         }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RegistrarGrupoActivity" android:background="@drawable/loginbg">
+
+    <TextView
+            android:text="Registrar Grupo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvRegistrarGrupo"
+            android:textSize="34sp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.548" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.071"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etRegistrarGrupoIdProfesor"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/tvRegistrarGrupo"
+            android:layout_marginTop="36dp" android:hint="Id de Profesor"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etRegistrarGrupoHoraInicio"
+            app:layout_constraintTop_toBottomOf="@+id/etRegistrarGrupoIdCiclo"
+            android:layout_marginTop="20dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.502" app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Hora Inicio"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etRegistrarGrupoHoraFin"
+            app:layout_constraintTop_toBottomOf="@+id/etRegistrarGrupoHoraInicio"
+            android:layout_marginTop="32dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.502" app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Hora Fin"/>
+    <EditText
+            android:layout_width="132dp"
+            android:layout_height="43dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etRegistrarGrupoIdCiclo"
+            app:layout_constraintTop_toBottomOf="@+id/etRegistrarGrupoIdProfesor"
+            android:layout_marginTop="32dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.498" app:layout_constraintEnd_toEndOf="parent"
+            android:hint="Id ciclo"/>
+    <Button
+            android:text="Registrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnRegistrarGrupo"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etRegistrarGrupoHoraFin" android:layout_marginTop="40dp"
+            android:backgroundTint="#000000"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

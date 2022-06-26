@@ -17,6 +17,7 @@ class AlumnoActivity : AppCompatActivity() {
 
         var drawerLayoutAlumno = findViewById<DrawerLayout>(R.id.drawerLayoutAlumno)
         var navViewAlumno = findViewById<NavigationView>(R.id.navViewAlumno)
+        val userDao = UsuarioDAO.instance
 
         val userId = intent.getStringExtra("EXTRA_IDALUMNO")
 
@@ -33,7 +34,10 @@ class AlumnoActivity : AppCompatActivity() {
                     i.putExtra("EXTRA_IDALUMNO",userId)
                     startActivity(i)
                 }
-
+                R.id.logoutEstudianteOption -> {
+                   userDao.setUsuario(Usuario("",""))
+                    finish()
+                }
             }
             true
         }

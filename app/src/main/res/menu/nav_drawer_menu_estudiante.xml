@@ -5,5 +5,9 @@
             android:id="@+id/historialAcademicoOption"
             android:title="Historial Academico"
         />
+        <item
+                android:id="@+id/logoutEstudianteOption"
+                android:title="Logout"
+        />
 
 </menu>

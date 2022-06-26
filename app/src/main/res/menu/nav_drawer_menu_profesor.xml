@@ -5,5 +5,9 @@
             android:id="@+id/profesorOption"
             android:title="Profesor Grupos"
         />
+        <item
+                android:id="@+id/logoutProfesor"
+                android:title="Logout"
+        />
 
 </menu>

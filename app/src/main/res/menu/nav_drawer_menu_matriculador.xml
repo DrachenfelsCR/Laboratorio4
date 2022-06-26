@@ -5,5 +5,9 @@
             android:id="@+id/matricularOption"
             android:title="Matricular"
         />
+        <item
+                android:id="@+id/logoutMatriculadorOption"
+                android:title="Logout"
+        />
 
 </menu>

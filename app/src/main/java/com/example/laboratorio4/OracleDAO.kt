@@ -370,7 +370,7 @@ class OracleDAO {
     }
 
 
-    fun Login(con: Context, password: String, nombre: String) : String{
+    fun Login(con: Context, password: String, nombre: String){
         var url = "http://10.0.2.2:8080/Willyrex/api/login/sesion"
 
         val jsonObject = JSONObject()
@@ -403,7 +403,6 @@ class OracleDAO {
         )
         // Add the volley post request to the request queue
         VolleySingleton.getInstance(con).addToRequestQueue(request)
-
-        return usuario.getUsuario().rol
+        Thread.sleep(1000)
     }
 }

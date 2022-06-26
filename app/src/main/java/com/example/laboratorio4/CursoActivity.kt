@@ -111,20 +111,11 @@ class CursoActivity : AppCompatActivity() {
                         )
                         archived.add(curso)
                         //cursos.deleteCurso(position)
-                        lista.adapter?.notifyItemRemoved(position)
                         //Este es el Intent que enviara a un formulario para editar al aplicante
-                        Intent(this@CursoActivity,CursoActivity::class.java).also {
-                          //  it.putExtra("EXTRA_CURSO",carrera)
-                           // it.putExtra("EXTRA_POSITION",position)
-                          //  startActivity(it)
+                        Intent(this@CursoActivity,RegistrarGrupoActivity::class.java).also {
+                          it.putExtra("EXTRA_CODIGOCURSO",curso.codigo)
+                          startActivity(it)
                         }
-                        Snackbar.make(lista, curso.nombre + " se editara...", Snackbar.LENGTH_LONG)
-                            .setAction("Undo") {
-                                archived.removeAt(archived.lastIndexOf(curso))
-                                lista.adapter?.notifyItemInserted(position)
-                            }.show()
-                        adaptador = Cursos_RecyclerViewAdapter(cursos.getCursos())
-                        lista.adapter = adaptador
                     }
 
 

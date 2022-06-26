@@ -14,6 +14,7 @@ class MatriculadorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_matriculador)
+        val userDao = UsuarioDAO.instance
 
         var drawerLayoutMatriculador = findViewById<DrawerLayout>(R.id.drawerLayoutMatriculador)
         var navViewMatriculador = findViewById<NavigationView>(R.id.navViewMatriculador)
@@ -31,6 +32,10 @@ class MatriculadorActivity : AppCompatActivity() {
                     val i = Intent(this, MatricularActivity::class.java)
                     //i.putExtra("USER_EXTRA",user?.user!!)
                     startActivity(i)
+                }
+                R.id.logoutMatriculadorOption -> {
+                    userDao.setUsuario(Usuario("",""))
+                    finish()
                 }
 
             }

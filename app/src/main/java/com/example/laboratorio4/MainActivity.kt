@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         var drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
         var navView = findViewById<NavigationView>(R.id.navView)
-
+        val userDao = UsuarioDAO.instance
 
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open,R.string.close)
         drawerLayout.addDrawerListener(toggle)
@@ -48,6 +48,10 @@ class MainActivity : AppCompatActivity() {
                     val i = Intent(this, HistorialAlumnoAdminActivity::class.java)
                     //i.putExtra("USER_EXTRA",user?.user!!)
                     startActivity(i)
+                }
+                R.id.adminLogoutOption -> {
+                    userDao.setUsuario(Usuario("",""))
+                    finish()
                 }
             }
             true

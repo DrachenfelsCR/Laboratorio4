@@ -3,10 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/layout/activity_alumno.xml" value="0.36666666666666664" />
+        <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/layout/activity_curso.xml" value="0.24947916666666667" />
+        <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/layout/activity_registrar_grupo.xml" value="0.5" />
+        <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/menu/nav_drawer_menu.xml" value="0.38125" />
+        <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/menu/nav_drawer_menu_estudiante.xml" value="0.38125" />
+        <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/menu/nav_drawer_menu_matriculador.xml" value="0.38125" />
+        <entry key="..\:/UNA/Ced-116860308Ced-402370139/Laboratorio4/app/src/main/res/menu/nav_drawer_menu_profesor.xml" value="0.38125" />
         <entry key="..\:/UNA/Laboratorio4/app/src/main/res/drawable/ic_baseline_control_point_24.xml" value="0.1671875" />
         <entry key="..\:/UNA/Laboratorio4/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.3828125" />
         <entry key="..\:/UNA/Laboratorio4/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.3828125" />
-        <entry key="..\:/UNA/Laboratorio4/app/src/main/res/layout/activity_alumno.xml" value="0.22" />
+        <entry key="..\:/UNA/Laboratorio4/app/src/main/res/layout/activity_alumno.xml" value="0.33" />
         <entry key="..\:/UNA/Laboratorio4/app/src/main/res/layout/activity_carrera.xml" value="0.333786231884058" />
         <entry key="..\:/UNA/Laboratorio4/app/src/main/res/layout/activity_ciclos.xml" value="0.41637831603229525" />
         <entry key="..\:/UNA/Laboratorio4/app/src/main/res/layout/activity_curso.xml" value="0.35658914728682173" />

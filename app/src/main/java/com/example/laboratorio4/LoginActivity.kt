@@ -28,8 +28,8 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this,"Hay espacios vacios", Toast.LENGTH_SHORT).show()
             }
             else{
-                //var rol = usuario.getUsuario().rol
-                var rol =   oracleDao.Login(this,etLoginPassword.text.toString(),etLoginUsername.text.toString())
+                oracleDao.Login(this,etLoginPassword.text.toString(),etLoginUsername.text.toString())
+                var rol = usuario.getUsuario().rol
                 if (rol == "Error")
                 {
                     Toast.makeText(this,"Informacion incorrecta", Toast.LENGTH_SHORT).show()
@@ -37,19 +37,27 @@ class LoginActivity : AppCompatActivity() {
                 else{
                     when(rol){
                         "Admin" -> {
+                            etLoginUsername.text.clear()
+                            etLoginPassword.text.clear()
                             val i = Intent(this, MainActivity::class.java)
                             startActivity(i)
                         }
                         "Estudiante"->{
+                            etLoginUsername.text.clear()
+                            etLoginPassword.text.clear()
                             val i = Intent(this, AlumnoActivity::class.java)
                             i.putExtra("EXTRA_IDALUMNO",etLoginUsername.text.toString())
                             startActivity(i)
                         }
                         "Matriculador"->{
+                            etLoginUsername.text.clear()
+                            etLoginPassword.text.clear()
                             val i = Intent(this, MatriculadorActivity::class.java)
                             startActivity(i)
                         }
                         "Profesor"->{
+                            etLoginUsername.text.clear()
+                            etLoginPassword.text.clear()
                             val i = Intent(this, ProfesorActivity::class.java)
                             i.putExtra("EXTRA_IDPROFESOR",etLoginUsername.text.toString())
                             startActivity(i)
